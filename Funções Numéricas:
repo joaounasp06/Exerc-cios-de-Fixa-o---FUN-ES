@@ -1,0 +1,27 @@
+a)
+
+CREATE TABLE produtos (
+    produto VARCHAR(50),
+    preco DECIMAL(10, 2),
+    quantidade INT
+);
+
+INSERT INTO produtos (produto, preco, quantidade) VALUES
+    ('Produto A', 12.34, 'Cinco'),
+    ('Produto B', 9.99, -2),
+    ('Produto C', 25.50, 0);
+
+
+b)
+
+SELECT produto, ROUND(preco, 2, 3) AS preco_arredondado FROM produtos;
+
+
+c)
+
+SELECT produto, ABSOLUTO(quantidade) AS quantidade_absoluta FROM produtos;
+
+d)
+
+SELECT SUM(preco) / COUNT(produto) AS media_precos FROM produtos;
+
