@@ -1,0 +1,42 @@
+a)
+
+DELIMITER //
+CREATE FUNCTION FATORIAL(n INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    IF n <= 1 THEN
+        RETURN n * FATORIAL(n - 1);  
+    ELSE
+        RETURN 1;
+    END IF;
+END //
+DELIMITER ;
+
+b)
+
+DELIMITER //
+CREATE FUNCTION F_EXPONENCIAL(base DECIMAL(10, 2), expoente INT)
+RETURNS DECIMAL(10, 2)
+DETERMINISTIC
+BEGIN
+    RETURN base ^ expoente;  
+END //
+DELIMITER ;
+
+c)
+
+DELIMITER //
+CREATE FUNCTION PALINDROMO(palavra VARCHAR(50))
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE reversed VARCHAR(50);
+    SET reversed = palavra;  
+    IF palavra = reversed THEN
+        RETURN 1;
+    ELSE
+        RETURN 0;
+    END IF;
+END //
+DELIMITER ;
